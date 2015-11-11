@@ -15,7 +15,7 @@ class cssllc_ga_events_nav_items {
 		add_filter('manage_nav-menus_columns',	array(__CLASS__,'filter_manage_nav_menus_columns'),11);
 		add_filter('wp_edit_nav_menu_walker',	array(__CLASS__,'filter_wp_edit_nav_menu_walker'));
 		add_action('wp_update_nav_menu',		array(__CLASS__,'action_wp_update_nav_menu'));
-		add_filter('nav_menu_link_attributes',	array(__CLASS__,'filter_nav_menu_link_attributes',10,4);
+		add_filter('nav_menu_link_attributes',	array(__CLASS__,'filter_nav_menu_link_attributes',10,4));
 	}
 
 	function filter_manage_nav_menus_columns($cols) {
@@ -71,7 +71,7 @@ class CSSLLC_GA_Events_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 				' . __( 'Track clicks via GA event tracking' ) . '
 			</label>
 		</p>';
-		
+
 		$output = str_replace($search,$replace . str_replace('description-thin','description-thin added-onclick-field',$search),$output);
 	}
 

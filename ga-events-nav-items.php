@@ -15,7 +15,7 @@ class cssllc_ga_events_nav_items {
 		add_filter('manage_nav-menus_columns',	array(__CLASS__,'filter_manage_nav_menus_columns'),11);
 		add_filter('wp_edit_nav_menu_walker',	array(__CLASS__,'filter_wp_edit_nav_menu_walker'));
 		add_action('wp_update_nav_menu',		array(__CLASS__,'action_wp_update_nav_menu'));
-		add_filter('nav_menu_link_attributes',	array(__CLASS__,'filter_nav_menu_link_attributes',10,4));
+		add_filter('nav_menu_link_attributes',	array(__CLASS__,'filter_nav_menu_link_attributes'),10,4);
 	}
 
 	function filter_manage_nav_menus_columns($cols) {

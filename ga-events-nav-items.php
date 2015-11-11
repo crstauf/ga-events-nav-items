@@ -40,7 +40,6 @@ class cssllc_ga_events_nav_items {
 	}
 
 	static function filter_nav_menu_link_attributes($atts,$item,$args,$depth) {
-		print_r($args);
 		$track = get_post_meta(esc_attr($item->ID),'_menu_item_event_track',true);
 		if (false === $track) return $atts;
 		return array_merge($atts,array('onclick' => "__gaTracker('send','event','Nav','click','" . $args->menu->name . "/" . $item->post_title . "',1)"));
